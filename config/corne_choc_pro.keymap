@@ -22,9 +22,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            quick-tap-ms = <75>;
+            quick-tap-ms = <70>;
             hold-trigger-key-positions = <23 25 24 26>;
             hold-trigger-on-release;
         };
@@ -35,8 +35,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <75>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <70>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <15 16 17 18>;
             flavor = "tap-preferred";
@@ -56,9 +56,15 @@
             key-positions = <41 19 15>;
         };
 
-        layer3 {
+        combined {
             bindings = <&mo 3>;
             key-positions = <41 44>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <22 19>;
+            layers = <0>;
         };
     };
 
@@ -85,7 +91,7 @@
         };
 
         lower_layer {
-            display-name = "NUMBER";
+            display-name = "symbols&numbers";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -103,19 +109,21 @@
 
         raised {
             bindings = <
-&kp ESC          &kp F1           &kp F2           &kp F3                          &kp F4                           &kp F5     &none   &none   &kp F6     &kp F7           &kp F8           &kp F9           &kp F10          &trans
-&rgb_ug RGB_BRI  &mmv MOVE_LEFT   &mmv MOVE_UP     &mmv MOVE_DOWN                  &mmv MOVE_RIGHT                  &trans     &trans  &trans  &kp LEFT   &kp DOWN         &kp UP_ARROW     &kp RIGHT        &rgb_ug RGB_HUI  &rgb_ug RGB_HUD
-&rgb_ug RGB_BRD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_COLOR_HSB(0,0,100)  &rgb_ug RGB_COLOR_HSB(0,100,50)  &kp F11                    &kp F12    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_SPD
-                                                   &trans                          &trans                           &kp SPACE                  &kp ENTER  &trans           &kp DELETE
+&kp ESC  &kp F1          &kp F2        &kp F3          &kp F4           &kp F5     &none   &none   &kp F6     &kp F7            &kp F8            &kp F9     &kp F10  &trans
+&trans   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &trans  &trans  &kp LEFT   &kp DOWN          &kp UP_ARROW      &kp RIGHT  &trans   &trans
+&trans   &trans          &trans        &trans          &trans           &kp F11                    &kp F12    &kp K_PLAY_PAUSE  &kp C_PLAY_PAUSE  &trans     &trans   &trans
+                                       &trans          &trans           &kp SPACE                  &kp ENTER  &trans            &kp DELETE
             >;
+
+            label = "fn&media";
         };
 
-        layer_3 {
+        combined {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp A   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
+&trans      &trans      &trans        &trans        &trans  &trans  &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
+&trans      &trans      &trans        &trans        &trans  &trans                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
+                                      &trans        &trans  &trans                  &trans           &trans           &trans
             >;
         };
     };
