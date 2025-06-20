@@ -75,9 +75,9 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE    &kp Q              &kp W                &kp E            &kp R                &kp T      &none  &none  &kp Y    &kp U             &kp I             &kp O                 &kp P                  &kp BACKSLASH
+&kp ESCAPE    &kp Q              &kp W                &kp E            &kp R                &kp T      &none  &none  &kp Y    &kp U             &kp I             &kp O                 &kp P                  &kp KP_DIVIDE
 &kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G      &none  &none  &kp H    &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SINGLE_QUOTE
-&kp GRAVE     &kp Z              &kp X                &kp C            &kp V                &kp B                    &kp N    &kp M             &kp COMMA         &kp DOT               &kp KP_SLASH           &kp CARET
+&kp GRAVE     &kp Z              &kp X                &kp C            &kp V                &kp B                    &kp N    &kp M             &kp COMMA         &kp DOT               &kp COLON              &kp UNDER
                                                       &kp TAB          &mo 1                &kp SPACE                &kp RET  &mo 2             &kp BACKSPACE
             >;
 
@@ -94,10 +94,10 @@
             //                    | GUI |     | SPC   |        | ENT   |     | ALT |
 
             bindings = <
-&kp ESCAPE     &kp EXCL                     &kp AT                  &kp HASH                   &kp DOLLAR                 &kp PERCENT      &none  &none  &kp AMPERSAND    &kp ASTERISK                &kp PIPE                    &kp UNDERSCORE                &none              &kp QUESTION
-&kp KP_N0      &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &kp KP_NUMBER_5  &none  &none  &kp KP_NUMBER_6  &hmr RIGHT_GUI KP_NUMBER_7  &hmr RIGHT_ALT KP_NUMBER_8  &hmr RIGHT_SHIFT KP_NUMBER_9  &kp KP_NUMBER_0    &kp DOUBLE_QUOTES
-&kp LESS_THAN  &kp GREATER_THAN             &kp TILDE               &kp MINUS                  &kp PLUS                   &kp KP_EQUAL                   &kp LEFT_BRACE   &kp LEFT_BRACKET            &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS         &kp RIGHT_BRACKET  &kp RIGHT_BRACE
-                                                                    &kp TAB                    &trans                     &kp SPACE                      &kp ENTER        &trans                      &kp BACKSPACE
+&kp ESCAPE  &kp EXCL                     &kp AT                  &kp HASH                   &kp DOLLAR                 &kp PERCENT      &none  &none  &kp AMPERSAND    &kp ASTERISK                &kp CARET                   &kp LESS_THAN                 &kp GREATER_THAN   &kp QUESTION
+&kp KP_N0   &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &kp KP_NUMBER_5  &none  &none  &kp KP_NUMBER_6  &hmr RIGHT_GUI KP_NUMBER_7  &hmr RIGHT_ALT KP_NUMBER_8  &hmr RIGHT_SHIFT KP_NUMBER_9  &kp KP_NUMBER_0    &kp DOUBLE_QUOTES
+&kp TILDE   &kp PIPE                     &kp BACKSLASH           &kp MINUS                  &kp PLUS                   &kp KP_EQUAL                   &kp LEFT_BRACE   &kp LEFT_BRACKET            &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS         &kp RIGHT_BRACKET  &kp RIGHT_BRACE
+                                                                 &kp TAB                    &trans                     &kp SPACE                      &kp ENTER        &trans                      &kp BACKSPACE
             >;
         };
 
