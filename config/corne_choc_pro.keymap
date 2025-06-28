@@ -94,7 +94,7 @@
         sr_chj: sr_chj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(GRAVE) &kp C>;
+            bindings = <&kp RA(SQT) &kp C>;
             label = "SR_CHJ";
             wait-ms = <10>;
         };
