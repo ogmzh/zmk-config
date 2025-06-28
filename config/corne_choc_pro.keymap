@@ -74,6 +74,16 @@
         };
     };
 
+    macros {
+        sr_sh: sr_sh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RA(NUMBER_6)) &kp S>;
+            label = "SR_SH";
+            wait-ms = <10>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -126,8 +136,8 @@
 
         combined {
             bindings = <
-&bt BT_CLR  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
-&trans      &trans      &trans        &trans        &trans  &trans  &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
+&bt BT_CLR  &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &sr_sh  &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
+&trans      &trans      &trans        &trans        &sr_sh  &sr_sh  &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
 &trans      &trans      &trans        &trans        &trans  &trans                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
                                       &trans        &trans  &trans                  &trans           &trans           &trans
             >;
