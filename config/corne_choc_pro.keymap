@@ -66,6 +66,12 @@
             key-positions = <22 19>;
             layers = <0>;
         };
+
+        sr_sh {
+            bindings = <&kp LS(RA(NUMBER_6))>;
+            key-positions = <18>;
+            layers = <3>;
+        };
     };
 
     keymap {
