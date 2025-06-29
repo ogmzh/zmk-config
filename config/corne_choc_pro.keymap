@@ -192,7 +192,7 @@
             bindings = <
 &bt BT_CLR    &bt BT_NXT                   &trans                  &sr_sh                     &sr_dj                     &sr_zh             &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
 &bt BT_SEL 0  &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &trans             &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
-&bt BT_SEL 1  &kp LSHIFT                   &kt LSHIFT              &sk LSHIFT                 &sr_ch                     &sr_chj_mod_morph                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
+&bt BT_SEL 1  &kp LSHIFT                   &kt LSHIFT              &sr_chj_uppercase          &sr_ch                     &sr_chj_mod_morph                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
                                                                    &trans                     &trans                     &trans                             &trans           &trans           &trans
             >;
         };
