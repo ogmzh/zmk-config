@@ -75,12 +75,6 @@
             key-positions = <22 19>;
             layers = <0>;
         };
-
-        sr_sh {
-            bindings = <&kp LS(RA(NUMBER_6))>;
-            key-positions = <18>;
-            layers = <3>;
-        };
     };
 
     macros {
@@ -129,7 +123,7 @@
             #binding-cells = <0>;
             bindings = <&kp RA(SQT) &kp LS(C)>;
             label = "SR_CHJ_UPPERCASE";
-            wait-ms = <10>;
+            wait-ms = <50>;
         };
     };
 
