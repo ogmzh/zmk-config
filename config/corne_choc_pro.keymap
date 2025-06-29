@@ -41,6 +41,15 @@
             hold-trigger-key-positions = <15 16 17 18>;
             flavor = "tap-preferred";
         };
+
+        sr_chj_mod_morph: sr_chj_mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SR_CHJ_MOD_MORPH";
+            bindings = <&sr_chj>, <&sr_chj_uppercase>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -114,6 +123,19 @@
             label = "SR_ZH";
             wait-ms = <10>;
         };
+
+        sr_chj_uppercase: sr_chj_uppercase {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHIFT &kp RSHIFT>,
+                <&macro_press>,
+                <&kp RA(SQT) &kp C>;
+
+            label = "SR_CHJ_UPPERCASE";
+            wait-ms = <10>;
+        };
     };
 
     keymap {
@@ -168,10 +190,10 @@
 
         combined {
             bindings = <
-&bt BT_CLR    &bt BT_NXT                   &trans                  &sr_sh                     &sr_dj                     &sr_zh   &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
-&bt BT_SEL 0  &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &trans   &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
-&bt BT_SEL 1  &kp LSHIFT                   &kt LSHIFT              &sk LSHIFT                 &sr_ch                     &sr_chj                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
-                                                                   &trans                     &trans                     &trans                   &trans           &trans           &trans
+&bt BT_CLR    &bt BT_NXT                   &trans                  &sr_sh                     &sr_dj                     &sr_zh             &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
+&bt BT_SEL 0  &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &trans             &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
+&bt BT_SEL 1  &kp LSHIFT                   &kt LSHIFT              &sk LSHIFT                 &sr_ch                     &sr_chj_mod_morph                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
+                                                                   &trans                     &trans                     &trans                             &trans           &trans           &trans
             >;
         };
     };
