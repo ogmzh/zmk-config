@@ -42,20 +42,10 @@
             flavor = "tap-preferred";
         };
 
-        unicode_c_lower: unicode_c_lower {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            codepoint = <0x0107>;  /* ć */
-        };
-        unicode_c_upper: unicode_c_upper {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            codepoint = <0x0106>;  /* Ć */
-        };
         sr_chj_mod_morph: sr_chj_mod_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&unicode_c_lower &unicode_c_upper>;
+            bindings = <&sr_chj>, <&sr_chj_uppercase>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -105,9 +95,9 @@
         sr_chj: sr_chj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(SQT) &kp C>;
+            bindings = <&macro_tap &kp RA(SQT)>, <&macro_tap &kp C>;
             label = "SR_CHJ";
-            wait-ms = <10>;
+            wait-ms = <20>;
         };
 
         sr_ch: sr_ch {
@@ -129,9 +119,13 @@
         sr_chj_uppercase: sr_chj_uppercase {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(SQT) &kp LS(C)>;
+            bindings = 
+                <&macro_release &kp LSHFT &kp RSHFT>
+                , <&macro_tap &kp RA(SQT)>
+                , <&macro_tap &kp LS(C)>
+                ;
             label = "SR_CHJ_UPPERCASE";
-            wait-ms = <50>;
+            wait-ms = <20>;
         };
     };
 
