@@ -131,7 +131,7 @@
                 <&macro_release>,
                 <&kp LSHIFT &kp RSHIFT>,
                 <&macro_press>,
-                <&kp RA(SQT) &kp C>;
+                <&kp RA(SQT) &kp LS(C)>;
 
             label = "SR_CHJ_UPPERCASE";
             wait-ms = <10>;
