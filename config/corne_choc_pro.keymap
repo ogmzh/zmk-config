@@ -5,9 +5,9 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
@@ -46,6 +46,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sr_chj>, <&sr_chj_uppercase>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -95,7 +96,8 @@
         sr_chj: sr_chj {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp RA(SQT)>, <&macro_tap &kp C>;
+            bindings = <&macro_tap>, <&kp RA(SQT)>, <&macro_tap>, <&kp C>;
+
             label = "SR_CHJ";
             wait-ms = <20>;
         };
@@ -119,11 +121,14 @@
         sr_chj_uppercase: sr_chj_uppercase {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = 
-                <&macro_release &kp LSHFT &kp RSHFT>
-                , <&macro_tap &kp RA(SQT)>
-                , <&macro_tap &kp LS(C)>
-                ;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_tap>,
+                <&kp RA(SQT)>,
+                <&macro_tap>,
+                <&kp LS(C)>;
+
             label = "SR_CHJ_UPPERCASE";
             wait-ms = <20>;
         };
@@ -162,7 +167,7 @@
 
             bindings = <
 &kp ESCAPE  &kp EXCL                     &kp AT                  &kp HASH                   &kp DOLLAR                 &kp PERCENT      &none  &none  &kp AMPERSAND    &kp ASTERISK                &kp CARET                   &kp LESS_THAN                 &kp GREATER_THAN   &kp QUESTION
-&kp KP_N0   &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &kp KP_NUMBER_5  &none  &none  &kp KP_NUMBER_6  &hmr RIGHT_GUI KP_NUMBER_7  &hmr RIGHT_ALT KP_NUMBER_8  &hmr RIGHT_SHIFT KP_NUMBER_9  &kp KP_NUMBER_0    &kp DOUBLE_QUOTES
+&kp CAPS    &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &kp KP_NUMBER_5  &none  &none  &kp KP_NUMBER_6  &hmr RIGHT_GUI KP_NUMBER_7  &hmr RIGHT_ALT KP_NUMBER_8  &hmr RIGHT_SHIFT KP_NUMBER_9  &kp KP_NUMBER_0    &kp DOUBLE_QUOTES
 &kp TILDE   &kp PIPE                     &kp BACKSLASH           &kp MINUS                  &kp PLUS                   &kp KP_EQUAL                   &kp LEFT_BRACE   &kp LEFT_BRACKET            &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS         &kp RIGHT_BRACKET  &kp RIGHT_BRACE
                                                                  &trans                     &trans                     &trans                         &trans           &trans                      &trans
             >;
@@ -170,10 +175,10 @@
 
         raised {
             bindings = <
-&kp ESC     &kp F1  &kp F2          &kp F3             &kp F4           &kp F5   &none   &none   &kp F6    &kp F7            &kp F8          &kp F9      &kp F10  &trans
-&trans      &trans  &msc SCRL_DOWN  &msc SCRL_UP       &trans           &trans   &trans  &trans  &kp LEFT  &kp DOWN          &kp UP_ARROW    &kp RIGHT   &trans   &trans
-&sys_reset  &trans  &kp C_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp F11                  &kp F12   &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT  &trans   &trans
-                                    &trans             &trans           &trans                   &trans    &trans            &trans
+&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &kp K_CONTEXT_MENU  &trans      &trans        &trans      &trans      &kp C_VOLUME_UP
+&kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LCTRL S       &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G              &trans  &trans  &kp LEFT            &kp DOWN    &kp UP_ARROW  &kp RIGHT   &kp C_MUTE  &kp C_VOLUME_DOWN
+&trans        &trans             &sr_chj_uppercase  &sr_chj          &sr_ch           &sr_chj_mod_morph                  &trans              &kp C_PREV  &kp C_PP      &kp C_NEXT  &trans      &trans
+                                                    &trans           &trans           &trans                             &trans              &trans      &trans
             >;
 
             label = "fn&media";
@@ -181,10 +186,10 @@
 
         combined {
             bindings = <
-&bt BT_CLR    &bt BT_NXT                   &trans                  &sr_sh                     &sr_dj                     &sr_zh             &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &trans
-&bt BT_SEL 0  &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &trans             &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
-&bt BT_SEL 1  &kp LSHIFT                   &kt LSHIFT              &sr_chj_uppercase          &sr_ch                     &sr_chj_mod_morph                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
-                                                                   &trans                     &trans                     &trans                             &trans           &trans           &trans
+&kp ESCAPE    &kp F1   &kp F2   &kp F3      &kp F4        &kp F5        &trans  &trans  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI                  &bl BL_TOG
+&kp CAPSLOCK  &kp F6   &kp F7   &kp F8      &kp F9        &kp F10       &trans  &trans  &trans           &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                  &trans
+&sys_reset    &kp F11  &kp F12  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
+                                &trans      &trans        &trans                        &trans           &trans           &trans
             >;
         };
     };
