@@ -132,6 +132,18 @@
             label = "SR_CHJ_UPPERCASE";
             wait-ms = <20>;
         };
+
+        colon: colon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&kp SEMICOLON>;
+
+            label = "COLON";
+        };
     };
 
     keymap {
@@ -149,7 +161,7 @@
             bindings = <
 &kp ESCAPE    &kp Q              &kp W                &kp E            &kp R                &kp T      &none  &none  &kp Y          &kp U             &kp I             &kp O                 &kp P                  &kp KP_DIVIDE
 &kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G      &none  &none  &kp H          &hmr RIGHT_GUI J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SINGLE_QUOTE
-&kp GRAVE     &kp Z              &kp X                &kp C            &kp V                &kp B                    &kp N          &kp M             &kp COMMA         &kp DOT               &kp COLON              &kp UNDER
+&kp GRAVE     &kp Z              &kp X                &kp C            &kp V                &kp B                    &kp N          &kp M             &kp COMMA         &kp DOT               &colon                 &kp UNDER
                                                       &kp TAB          &mo 1                &kp SPACE                &kp BACKSPACE  &mo 2             &kp ENTER
             >;
 
