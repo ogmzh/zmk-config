@@ -136,11 +136,7 @@
         colon: colon {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHIFT>,
-                <&macro_tap>,
-                <&kp SEMICOLON>;
+            bindings = <&macro_tap>, <&kp LS(SEMICOLON)>;
 
             label = "COLON";
         };
