@@ -23,8 +23,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <70>;
+            flavor = "balanced";
             hold-trigger-key-positions = <23 25 24 26>;
             hold-trigger-on-release;
         };
@@ -36,10 +35,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <70>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <15 16 17 18>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
         };
 
         sr_chj_mod_morph: sr_chj_mod_morph {
