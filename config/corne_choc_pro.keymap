@@ -23,10 +23,9 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            flavor = "tap-unless-interrupted";
+            flavor = "balanced";
             hold-trigger-key-positions = <23 25 24 26>;
             quick-tap-ms = <125>;
-            hold-trigger-on-release;
         };
 
         hml: hml {
@@ -37,9 +36,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             hold-trigger-key-positions = <15 16 17 18>;
-            flavor = "tap-unless-interrupted";
+            flavor = "balanced";
             quick-tap-ms = <125>;
-            hold-trigger-on-release;
         };
 
         sr_chj_mod_morph: sr_chj_mod_morph {
