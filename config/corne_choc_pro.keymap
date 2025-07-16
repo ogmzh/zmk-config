@@ -23,7 +23,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             hold-trigger-key-positions = <23 25 24 26>;
             quick-tap-ms = <125>;
             hold-trigger-on-release;
@@ -37,7 +37,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             hold-trigger-key-positions = <15 16 17 18>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             quick-tap-ms = <125>;
             hold-trigger-on-release;
         };
