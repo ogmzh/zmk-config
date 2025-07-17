@@ -26,6 +26,7 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <23 25 24 26>;
             hold-trigger-on-release;
+            quick-tap-ms = <80>;
         };
 
         hml: hml {
@@ -38,6 +39,7 @@
             hold-trigger-key-positions = <15 16 17 18>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
+            quick-tap-ms = <80>;
         };
 
         sr_chj_mod_morph: sr_chj_mod_morph {
