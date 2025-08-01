@@ -140,6 +140,22 @@
 
             label = "COLON";
         };
+
+        tmux_vim: tmux_vim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LC(A)>, <&macro_tap>, <&kp LBKT>;
+
+            label = "TMUX_VIM";
+        };
+
+        del_word: del_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LA(BACKSPACE)>;
+
+            label = "DEL_WORD";
+        };
     };
 
     keymap {
@@ -183,10 +199,10 @@
 
         raised {
             bindings = <
-&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &kp K_CONTEXT_MENU  &trans      &trans        &trans      &trans      &kp C_VOLUME_UP
-&kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LCTRL S       &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G              &trans  &trans  &kp LEFT            &kp DOWN    &kp UP_ARROW  &kp RIGHT   &kp C_MUTE  &kp C_VOLUME_DOWN
-&trans        &trans             &sr_chj_uppercase  &sr_chj          &sr_ch           &sr_chj_mod_morph                  &trans              &kp C_PREV  &kp C_PP      &kp C_NEXT  &trans      &trans
-                                                    &trans           &trans           &trans                             &trans              &trans      &trans
+&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &tmux_vim  &trans      &del_word     &trans      &trans      &kp C_VOLUME_UP
+&kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LCTRL S       &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G              &trans  &trans  &kp LEFT   &kp DOWN    &kp UP_ARROW  &kp RIGHT   &kp C_MUTE  &kp C_VOLUME_DOWN
+&trans        &trans             &sr_chj_uppercase  &sr_chj          &sr_ch           &sr_chj_mod_morph                  &trans     &kp C_PREV  &kp C_PP      &kp C_NEXT  &trans      &trans
+                                                    &trans           &trans           &trans                             &trans     &trans      &trans
             >;
 
             label = "fn&media";
