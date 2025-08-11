@@ -193,13 +193,13 @@
 &kp ESCAPE  &kp EXCL                     &kp AT                  &kp HASH                   &kp DOLLAR                 &kp PERCENT      &none  &none  &kp AMPERSAND    &kp ASTERISK                &kp CARET                   &kp LESS_THAN                 &kp GREATER_THAN   &kp QUESTION
 &kp CAPS    &hml LEFT_SHIFT KP_NUMBER_1  &hml LCTRL KP_NUMBER_2  &hml LEFT_ALT KP_NUMBER_3  &hml LEFT_GUI KP_NUMBER_4  &kp KP_NUMBER_5  &none  &none  &kp KP_NUMBER_6  &hmr RIGHT_GUI KP_NUMBER_7  &hmr RIGHT_ALT KP_NUMBER_8  &hmr RIGHT_SHIFT KP_NUMBER_9  &kp KP_NUMBER_0    &kp DOUBLE_QUOTES
 &kp TILDE   &kp PIPE                     &kp BACKSLASH           &kp MINUS                  &kp PLUS                   &kp KP_EQUAL                   &kp LEFT_BRACE   &kp LEFT_BRACKET            &kp LEFT_PARENTHESIS        &kp RIGHT_PARENTHESIS         &kp RIGHT_BRACKET  &kp RIGHT_BRACE
-                                                                 &trans                     &trans                     &trans                         &kp DELETE       &trans                      &trans
+                                                                 &trans                     &trans                     &trans                         &trans           &trans                      &trans
             >;
         };
 
         raised {
             bindings = <
-&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &tmux_vim  &trans      &del_word     &trans      &trans      &kp C_VOLUME_UP
+&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &tmux_vim  &trans      &del_word     &kp DELETE  &trans      &kp C_VOLUME_UP
 &kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LCTRL S       &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G              &trans  &trans  &kp LEFT   &kp DOWN    &kp UP_ARROW  &kp RIGHT   &kp C_MUTE  &kp C_VOLUME_DOWN
 &trans        &trans             &sr_chj_uppercase  &sr_chj          &sr_ch           &sr_chj_mod_morph                  &trans     &kp C_PREV  &kp C_PP      &kp C_NEXT  &trans      &trans
                                                     &trans           &trans           &trans                             &trans     &trans      &trans
