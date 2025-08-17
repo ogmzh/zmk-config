@@ -26,8 +26,8 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <23 25 24 26>;
             hold-trigger-on-release;
-            quick-tap-ms = <100>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <80>;
+            require-prior-idle-ms = <60>;
         };
 
         hml: hml {
@@ -40,8 +40,8 @@
             hold-trigger-key-positions = <15 16 17 18>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
-            quick-tap-ms = <100>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <80>;
+            require-prior-idle-ms = <60>;
         };
 
         sr_chj_mod_morph: sr_chj_mod_morph {
