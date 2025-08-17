@@ -22,11 +22,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <23 25 24 26>;
             hold-trigger-on-release;
-            quick-tap-ms = <80>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <125>;
         };
 
         hml: hml {
@@ -35,11 +36,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <200>;
             hold-trigger-key-positions = <15 16 17 18>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
-            quick-tap-ms = <80>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <125>;
         };
 
         sr_chj_mod_morph: sr_chj_mod_morph {
