@@ -194,7 +194,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "OGM";
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
@@ -213,7 +213,7 @@
         };
 
         lower_layer {
-            display-name = "symbols&numbers";
+            display-name = "LWR";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5    |  LCTRL | RCTRL |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -237,7 +237,7 @@
                                                     &trans           &trans           &trans                             &trans     &trans      &trans
             >;
 
-            label = "fn&media";
+            label = "RSD";
         };
 
         combined {
@@ -247,6 +247,8 @@
 &sys_reset    &kp F11  &kp F12  &trans  &bt BT_SEL 0  &bt BT_SEL 1                  &trans           &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans           &rgb_ug RGB_COLOR_HSB(0,100,52)  &rgb_ug RGB_COLOR_HSB(0,0,100)
                                 &trans  &trans        &trans                        &trans           &trans           &trans
             >;
+
+            label = "CMBD";
         };
     };
 };
