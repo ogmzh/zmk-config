@@ -188,6 +188,22 @@
 
             label = "DEL_WORD";
         };
+
+        tmux_next: tmux_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LC(A)>, <&macro_tap>, <&kp N>;
+
+            label = "TMUX_NEXT";
+        };
+
+        tmux_prev: tmux_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LC(A)>, <&macro_tap>, <&kp P>;
+
+            label = "TMUX_PREV";
+        };
     };
 
     keymap {
@@ -231,7 +247,7 @@
 
         raised {
             bindings = <
-&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &tmux_vim  &trans      &del_word     &kp DELETE  &trans      &kp C_VOLUME_UP
+&kp ESC       &trans             &trans             &sr_sh           &sr_dj           &sr_zh             &none   &none   &tmux_vim  &tmux_prev  &del_word     &kp DELETE  &tmux_next  &kp C_VOLUME_UP
 &kp CAPSLOCK  &hml LEFT_SHIFT A  &hml LCTRL S       &hml LEFT_ALT D  &hml LEFT_GUI F  &kp G              &trans  &trans  &kp LEFT   &kp DOWN    &kp UP_ARROW  &kp RIGHT   &kp C_MUTE  &kp C_VOLUME_DOWN
 &trans        &trans             &sr_chj_uppercase  &sr_chj          &sr_ch           &sr_chj_mod_morph                  &trans     &kp C_PREV  &kp C_PP      &kp C_NEXT  &trans      &trans
                                                     &trans           &trans           &trans                             &trans     &trans      &trans
